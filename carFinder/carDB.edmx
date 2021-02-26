@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CarDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ebList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="city08" Type="int" />
+          <Property Name="cylinders" Type="int" />
+          <Property Name="displ" Type="float" />
+          <Property Name="drive" Type="nvarchar" MaxLength="50" />
+          <Property Name="engId" Type="int" />
+          <Property Name="eng_dscr" Type="nvarchar" MaxLength="50" />
+          <Property Name="fuelCost08" Type="int" />
+          <Property Name="fuelType" Type="nvarchar" MaxLength="50" />
+          <Property Name="fuelType1" Type="nvarchar" MaxLength="50" />
+          <Property Name="highway08" Type="int" />
+          <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="make" Type="nvarchar" MaxLength="50" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="trany" Type="nvarchar" MaxLength="50" />
+          <Property Name="VClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="year" Type="int" />
+          <Property Name="youSaveSpend" Type="nvarchar" MaxLength="50" />
+          <Property Name="trans_dscr" Type="nvarchar" MaxLength="50" />
+          <Property Name="tCharger" Type="nvarchar" MaxLength="50" />
+          <Property Name="sCharger" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="CarDataModelStoreContainer">
+          <EntitySet Name="ebList" EntityType="Self.ebList" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ebList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="city08" Type="Int32" />
+          <Property Name="cylinders" Type="Int32" />
+          <Property Name="displ" Type="Double" />
+          <Property Name="drive" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="engId" Type="Int32" />
+          <Property Name="eng_dscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fuelCost08" Type="Int32" />
+          <Property Name="fuelType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fuelType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="highway08" Type="Int32" />
+          <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="youSaveSpend" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trans_dscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tCharger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sCharger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="CarDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ebLists" EntityType="Self.ebList" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CarDataModelStoreContainer" CdmEntityContainer="CarDataEntities">
+          <EntitySetMapping Name="ebLists">
+            <EntityTypeMapping TypeName="CarDataModel.ebList">
+              <MappingFragment StoreEntitySet="ebList">
+                <ScalarProperty Name="city08" ColumnName="city08" />
+                <ScalarProperty Name="cylinders" ColumnName="cylinders" />
+                <ScalarProperty Name="displ" ColumnName="displ" />
+                <ScalarProperty Name="drive" ColumnName="drive" />
+                <ScalarProperty Name="engId" ColumnName="engId" />
+                <ScalarProperty Name="eng_dscr" ColumnName="eng_dscr" />
+                <ScalarProperty Name="fuelCost08" ColumnName="fuelCost08" />
+                <ScalarProperty Name="fuelType" ColumnName="fuelType" />
+                <ScalarProperty Name="fuelType1" ColumnName="fuelType1" />
+                <ScalarProperty Name="highway08" ColumnName="highway08" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="make" ColumnName="make" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="trany" ColumnName="trany" />
+                <ScalarProperty Name="VClass" ColumnName="VClass" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="youSaveSpend" ColumnName="youSaveSpend" />
+                <ScalarProperty Name="trans_dscr" ColumnName="trans_dscr" />
+                <ScalarProperty Name="tCharger" ColumnName="tCharger" />
+                <ScalarProperty Name="sCharger" ColumnName="sCharger" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
