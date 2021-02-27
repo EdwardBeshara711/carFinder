@@ -29,13 +29,33 @@ namespace carFinder
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.cbMake = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
+            // 
+            // cbMake
+            // 
+            this.cbMake.FormattingEnabled = true;
+            this.cbMake.Location = new System.Drawing.Point(12, 85);
+            this.cbMake.Name = "cbMake";
+            this.cbMake.Size = new System.Drawing.Size(375, 21);
+            this.cbMake.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbMake);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox cbMake;
     }
 }
 
