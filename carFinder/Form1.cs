@@ -23,20 +23,55 @@ namespace carFinder
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //select * from ebLists
-            var cars = carDataEntities.ebLists
-              .Select(c => new { make = c.make })
-             .Distinct()
-             .OrderBy(c => c.make)
-             .ToList();
 
-            cbMake.DisplayMember = "make";
-            
-            cbMake.DataSource = cars;
+           //select * from ebLists
+            var carsYear = carDataEntities.ebLists
+                .Select(c => new { year = c.year })
+                .Distinct()
+                .OrderBy(c => c.year)
+                .ToList();
 
+            cbYear.DisplayMember = "year";
+            cbYear.DataSource = carsYear;
+                                  
+        }
+
+        private void cbMake_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show("index changed");
+            string selectedMake = cbMake.GetItemText(cbMake.SelectedItem);
+
+            //MessageBox.Show($"{selectedMake}");
+
+            var carsModels = carDataEntities.ebLists
+                .Where(m => m.make == selectedMake)
+                .Select(m => new { model = m.model })
+                .Distinct()
+                .OrderBy(m => m.model)
+                .ToList();
+
+            cbModel.DisplayMember = "model";
+            cbModel.DataSource = carsModels;
 
         }
 
+        private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedYear = cbYear.GetItemText(cbYear.SelectedValue);
 
+            //MessageBox.Show($"{selectedYear.GetType()}");
+
+            var carMakes = carDataEntities.ebLists
+                .Where(y => y.year.ToString() == selectedYear)
+                .Select(c => new { make = c.make })
+                .Distinct()
+                .OrderBy(c => c.make)
+                .ToList();
+
+            cbMake.DisplayMember = "make";
+            cbMake.DataSource = carMakes;
+
+            
+        }
     }
 }
